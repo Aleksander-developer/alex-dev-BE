@@ -1,0 +1,71 @@
+/*
+npm init -> tutto ok
+npm i express
+npm i @types/express @types/node nodemon ts-node typescript express
+npm i mongoose dotenv cors
+npm install -g typescript
+npx tsc --init
+npm i --save-dev @types/cors
+
+npm install mongodb
+npm install mongoose
+
+npm install nodemailer
+npm install --save-dev @types/nodemailer
+
+
+
+
+npx nodemon src/app.ts -> per fare partire il Nodemon
+Avviare il server in sviluppo con npm run dev
+Compilare con npm run build
+Lanciare la versione compilata con npm start
+
+*/
+
+/*
+Struttura Backend
+Node.js + Express + MongoDb Atlas
+
+alex-dev-BE/
+├── node_modules/
+├── dist/                       # (generato dopo build TypeScript)
+├── src/
+│   ├── config/
+│   │   └── db.config.ts        # Connessione a MongoDB Atlas
+│   ├── controllers/
+│   │   └── newsletter.controller.ts
+│   ├── models/
+│   │   └── newsletter.model.ts
+│   ├── routes/
+│   │   └── newsletter.routes.ts
+    │    ├── progetti.routes.ts
+    │    ├── chi-sono.routes.ts
+    │    ├── contatti.routes.ts
+    │    ├── servizi.routes.ts
+│   ├── utils/
+│   │   └── email.ts
+│   └── app.ts                  # Entry point principale del backend
+├── .env                        # Variabili ambiente (PORT, MONGO_URI)
+├── package.json
+├── tsconfig.json
+├── package-lock.json
+
+*/
+
+/*
+username = aleksanderdeveloper
+pass = alexdeveloper
+
+La tua password per l'app per il dispositivo Email
+ 
+EMAIL_USER=aleksandernikollibusiness@gmail.com
+EMAIL_PASS=iogjdwjoqoxojgck
+
+
+*/
+
+/*
+Nel terminale, avvia l'app con: npm run dev
+
+*/
