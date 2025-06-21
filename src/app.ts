@@ -4,35 +4,34 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { connectDB } from './config/db.config';
 import newsletterRoutes from './routes/newsletter.routes';
-import apiRoutes from './routes'
-
-const allowedOrigins = ['http://localhost:4200', 'https://www.tuodominio.com'];
+import apiRoutes from './routes';
 
 dotenv.config();
 const app = express();
 
-// Middleware
-app.use(cors(
-  {
-  origin: function(origin, callback){
-    // permette richieste senza origin come curl o postman
-    if(!origin) return callback(null, true);
-    if(allowedOrigins.indexOf(origin) === -1){
-      const msg = 'La CORS policy non permette l\'accesso da questo dominio';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  }
-}
-));
+// ✅ Permetti Netlify + localhost in CORS
+const allowedOrigins = [
+  'http://localhost:4200',
+  'https://aleksandernikollideveloper.netlify.app',  // <-- metti qui il dominio Netlify reale
+  'https://www.tuodominio.com'      // <-- opzionale per quando avrai il dominio definitivo
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // Postman o curl
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('CORS non permesso da questo dominio'), false);
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 
-app.use('/api', apiRoutes);  // Tutte le API sotto /api/*
-
-// Rotte API
+// Rotte
+app.use('/api', apiRoutes);
 app.use('/api', newsletterRoutes);
 
-// Connessione DB e avvio server
+// Server
 const PORT = process.env.PORT || 5000;
 
 connectDB()
@@ -42,6 +41,6 @@ connectDB()
     });
   })
   .catch((error) => {
-    console.error('❌ Errore durante la connessione al database:', error);
+    console.error('❌ Connessione DB fallita:', error);
     process.exit(1);
   });
