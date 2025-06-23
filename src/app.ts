@@ -11,8 +11,8 @@ const app = express();
 
 // ✅ Permetti Netlify + localhost in CORS
 const allowedOrigins = [
-  'http://localhost:4200',
   'https://aleksandernikollideveloper.netlify.app',  // <-- metti qui il dominio Netlify reale
+  'http://localhost:4200',
   'https://www.tuodominio.com'      // <-- opzionale per quando avrai il dominio definitivo
 ];
 
