@@ -36,7 +36,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api', apiRoutes);
-app.use('/api', newsletterRoutes);
+// app.use('/api', newsletterRoutes);
 
 // Connessione al DB
 connectDB();

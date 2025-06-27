@@ -8,7 +8,7 @@ const express_1 = __importDefault(require("express"));
 const newsletter_controller_1 = require("../controllers/newsletter.controller");
 // import { subscribe } from '../controllers/newsletter.controller';
 const router = express_1.default.Router();
-router.post('/newsletter', (req, res, next) => {
+router.post('/', (req, res, next) => {
     Promise.resolve((0, newsletter_controller_1.subscribe)(req, res)).catch(next);
 });
 exports.default = router;
