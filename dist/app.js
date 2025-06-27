@@ -14,7 +14,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Lista degli origin autorizzati
 const allowedOrigins = [
-    'https://github.com/Aleksander-developer/alex-dev-BE.git',
+    'https://alex-dev-be.onrender.com',
     'http://localhost:4200'
 ];
 // Configurazione CORS

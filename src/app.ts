@@ -11,7 +11,7 @@ const app = express();
 
 // Lista degli origin autorizzati
 const allowedOrigins = [
-  'https://github.com/Aleksander-developer/alex-dev-BE.git',
+  'https://alex-dev-be.onrender.com',
   'http://localhost:4200'
 ];
 
