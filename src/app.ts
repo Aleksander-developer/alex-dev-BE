@@ -11,8 +11,7 @@ const app = express();
 
 // Lista degli origin autorizzati
 const allowedOrigins = [
-  'https://aleksandernikolli.netlify.app',
-  'https://aleksandernikollideveloper.netlify.app',
+  'https://github.com/Aleksander-developer/alex-dev-BE.git',
   'http://localhost:4200'
 ];
 
@@ -36,7 +35,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api', apiRoutes);
-// app.use('/api', newsletterRoutes);
+app.use('/api', newsletterRoutes);
 
 // Connessione al DB
 connectDB();
