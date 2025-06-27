@@ -1,4 +1,4 @@
-// alex-frontend-backend/api/src/app.ts
+// alex-alex-dev-be/src/app.ts
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  'https://aleksandernikollideveloper.netlify.app/',
+  'https://aleksandernikollideveloper.netlify.app',
   'http://localhost:4200'
   
 ];
